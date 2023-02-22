@@ -29,7 +29,7 @@ import lins.compose.linswidget.ui.theme.LinsWidgetTheme
  */
 class LinsCalendarWidget : AppWidgetProvider() {
 
-    lateinit var myView: BrageView
+    private lateinit var myView: BrageView
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         Log.d(TAG, "onUpdate: ")
@@ -70,11 +70,21 @@ internal fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManage
 ////        height = LayoutParams.MATCH_PARENT
 ////        width = LayoutParams.MATCH_PARENT
 //    }
-    val bitmap = Bitmap.createBitmap(500,500,Bitmap.Config.ARGB_8888)
+    val bitmap = Bitmap.createBitmap(
+        //if (myView.width == 0) 1 else
+        myView.width,
+        //if (myView.height == 0) 1 else
+        myView.height,
+        Bitmap.Config.ARGB_8888
+    )
+    val canvas = Canvas(bitmap)
+    myView.draw(canvas)
 //    val bitmap = BitmapFactory.decodeResource(context.applicationContext.resources, R.drawable.blackhole)
 //    val canvas = Canvas(bitmap)
 //    canvas.drawBitmap(bitmap,0f,0f,null)
-    myView.draw(Canvas(bitmap))
+    Log.d(TAG, "updateAppWidget: $canvas")
+    
+    
 
     val views = RemoteViews(context.packageName, R.layout.lins_calendar_widget)
     views.setImageViewBitmap(R.id.widget_ImagView,bitmap)

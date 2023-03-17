@@ -1,13 +1,25 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 style="@style/Widget.LinsWidget.AppWidget.Container"
                 android:theme="@style/Theme.LinsWidget.AppWidgetContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+>
 
-    <ImageView
-            android:layout_width="match_parent" android:layout_height="match_parent"
-            android:id="@+id/widget_ImagView"
-            android:src="@drawable/blackhole"
+<!--    <ImageView-->
+<!--            android:layout_width="match_parent" android:layout_height="match_parent"-->
+<!--            android:id="@+id/widget_ImagView"-->
+<!--            android:src="@drawable/blackhole"-->
 
-            />
-</FrameLayout>
+<!--            />-->
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:id="@+id/calender_date"
+              android:text="xxxx-xx-xx"
+              android:gravity="left|center_vertical"
+              />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:id="@+id/calender_others"
+              android:text="jahgfjahfjah"
+              android:gravity="right|center_vertical"
+              />
+</LinearLayout>

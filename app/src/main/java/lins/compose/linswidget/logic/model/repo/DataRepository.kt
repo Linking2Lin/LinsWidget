@@ -6,6 +6,7 @@ import lins.compose.linswidget.logic.model.data.Lunar
 import lins.compose.linswidget.logic.network.GetService
 import lins.compose.linswidget.logic.network.RetrofitIns
 import lins.compose.linswidget.logic.network.await
+import javax.inject.Inject
 
 /**
  * @author: Linking.Lin
@@ -23,10 +24,10 @@ import lins.compose.linswidget.logic.network.await
 //    val caleData : CaleData?
 //}
 
-class DataRepositoryImp(
+
+class DataRepositoryImp @Inject constructor(
 
 ){
-
     suspend fun getData() : Lunar {
             val service = RetrofitIns.instance.create(GetService::class.java)
             return service.getData().await()

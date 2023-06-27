@@ -5,11 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import dagger.hilt.android.AndroidEntryPoint
-import lins.compose.linswidget.logic.model.repo.DataRepositoryImp
 import lins.compose.linswidget.ui.theme.LinsWidgetTheme
 import lins.compose.linswidget.ui.viewmodels.MainViewModel
 import lins.compose.linswidget.ui.views.MainScreen
@@ -23,7 +22,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             LinsWidgetTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
                     //val model = MainViewModel(DataRepositoryImp())
                     MainScreen(viewModel)
                 }

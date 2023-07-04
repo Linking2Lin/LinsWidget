@@ -1,4 +1,4 @@
-package lins.compose.linswidget.ui
+package lins.compose.linswidget.ui.views
 
 import android.content.Context
 import android.util.AttributeSet

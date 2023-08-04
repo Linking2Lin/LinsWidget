@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:name=".MyApplication"
             android:allowBackup="true"
@@ -23,6 +25,16 @@
             <meta-data
                     android:name="android.appwidget.provider"
                     android:resource="@xml/lins_calendar_widget_info"/>
+        </receiver>
+
+        <receiver android:name=".glance.demo.ui.theme.MyAppWidgetReceiver"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/my_app_widget_info" />
         </receiver>
 
         <activity

@@ -22,8 +22,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val repository: DataRepositoryImp
 ) : ViewModel() {
+    @Inject
+    lateinit var repository: DataRepositoryImp
+
     private var _caleDate: MutableStateFlow<Lunar?> = MutableStateFlow(null)
     val caleData get() = _caleDate
 

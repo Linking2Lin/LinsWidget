@@ -16,8 +16,8 @@ import javax.inject.Inject
  */
 
 class DataRepositoryImp @Inject constructor(
-    private val service: GetService = RetrofitIns.instance.create(GetService::class.java)
 ) {
+    private val service: GetService = RetrofitIns.instance.create(GetService::class.java)
     suspend fun getData(): Lunar {
         return service.getData().await()
     }

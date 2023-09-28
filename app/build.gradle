@@ -1,11 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
     id 'org.jetbrains.kotlin.plugin.serialization' version "1.9.10" // 跟Kotlin版本一致
     id 'com.google.relay' version '0.3.02'
-
+    id 'kotlin-kapt'
 }
 
 android {

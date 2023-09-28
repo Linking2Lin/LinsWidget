@@ -15,6 +15,7 @@ import lins.compose.linswidget.logic.model.repo.DataRepositoryImp
 import lins.compose.linswidget.ui.theme.LinsWidgetTheme
 import lins.compose.linswidget.ui.viewmodels.MainViewModel
 import lins.compose.linswidget.ui.views.MainScreen
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -24,7 +25,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LinsWidgetTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
                     MainScreen(viewModel)
                 }

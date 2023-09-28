@@ -1,7 +1,5 @@
 package lins.compose.linswidget.logic.model.repo
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import lins.compose.linswidget.logic.model.data.Lunar
 import lins.compose.linswidget.logic.network.GetService
 import lins.compose.linswidget.logic.network.RetrofitIns
@@ -17,19 +15,10 @@ import javax.inject.Inject
  * -----------------------------------------------------
  */
 
-//interface DataRepository {
-//     val okhttpClient: Any
-//     val apiService: Any
-//
-//    val caleData : CaleData?
-//}
-
-
 class DataRepositoryImp @Inject constructor(
-
-){
-    suspend fun getData() : Lunar {
-            val service = RetrofitIns.instance.create(GetService::class.java)
-            return service.getData().await()
+    private val service: GetService = RetrofitIns.instance.create(GetService::class.java)
+) {
+    suspend fun getData(): Lunar {
+        return service.getData().await()
     }
 }
